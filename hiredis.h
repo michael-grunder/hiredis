@@ -31,8 +31,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __HIREDIS_H
-#define __HIREDIS_H
+#ifndef HIREDIS_H
+#define HIREDIS_H
 #include "read.h"
 #include <stdarg.h> /* for va_list */
 #ifndef _MSC_VER

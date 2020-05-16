@@ -1,5 +1,5 @@
-#ifndef __HIREDIS_FMACRO_H
-#define __HIREDIS_FMACRO_H
+#ifndef HIREDIS_FMACRO_H
+#define HIREDIS_FMACRO_H
 
 #define _XOPEN_SOURCE 600
 #define _POSIX_C_SOURCE 200112L

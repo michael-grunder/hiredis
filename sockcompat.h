@@ -28,8 +28,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __SOCKCOMPAT_H
-#define __SOCKCOMPAT_H
+#ifndef SOCKCOMPAT_H
+#define SOCKCOMPAT_H
 
 #ifndef _WIN32
 /* For POSIX systems we use the standard BSD socket API. */
@@ -88,4 +88,4 @@ int win32_poll(struct pollfd *fds, nfds_t nfds, int timeout);
 #endif /* REDIS_SOCKCOMPAT_IMPLEMENTATION */
 #endif /* _WIN32 */
 
-#endif /* __SOCKCOMPAT_H */
+#endif /* SOCKCOMPAT_H */

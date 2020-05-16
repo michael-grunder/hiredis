@@ -29,8 +29,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __HIREDIS_ASYNC_PRIVATE_H
-#define __HIREDIS_ASYNC_PRIVATE_H
+#ifndef HIREDIS_ASYNC_PRIVATE_H
+#define HIREDIS_ASYNC_PRIVATE_H
 
 #define _EL_ADD_READ(ctx)                                         \
     do {                                                          \
@@ -69,4 +69,4 @@ static inline void refreshTimeout(redisAsyncContext *ctx) {
 void __redisAsyncDisconnect(redisAsyncContext *ac);
 void redisProcessCallbacks(redisAsyncContext *ac);
 
-#endif  /* __HIREDIS_ASYNC_PRIVATE_H */
+#endif  /* HIREDIS_ASYNC_PRIVATE_H */

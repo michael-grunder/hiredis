@@ -33,8 +33,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __DICT_H
-#define __DICT_H
+#ifndef DICT_H
+#define DICT_H
 
 #define DICT_OK 0
 #define DICT_ERR 1
@@ -123,4 +123,4 @@ static dictIterator *dictGetIterator(dict *ht);
 static dictEntry *dictNext(dictIterator *iter);
 static void dictReleaseIterator(dictIterator *iter);
 
-#endif /* __DICT_H */
+#endif /* DICT_H */

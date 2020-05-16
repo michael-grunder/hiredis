@@ -32,8 +32,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __NET_H
-#define __NET_H
+#ifndef NET_H
+#define NET_H
 
 #include "hiredis.h"
 

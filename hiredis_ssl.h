@@ -29,8 +29,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __HIREDIS_SSL_H
-#define __HIREDIS_SSL_H
+#ifndef HIREDIS_SSL_H
+#define HIREDIS_SSL_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -58,4 +58,4 @@ int redisInitiateSSL(redisContext *c, struct ssl_st *ssl);
 }
 #endif
 
-#endif  /* __HIREDIS_SSL_H */
+#endif  /* HIREDIS_SSL_H */

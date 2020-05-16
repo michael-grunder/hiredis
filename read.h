@@ -30,8 +30,8 @@
  */
 
 
-#ifndef __HIREDIS_READ_H
-#define __HIREDIS_READ_H
+#ifndef HIREDIS_READ_H
+#define HIREDIS_READ_H
 #include <stdio.h> /* for size_t */
 
 #define REDIS_ERR -1

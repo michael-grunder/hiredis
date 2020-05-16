@@ -29,8 +29,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef __HIREDIS_ASYNC_H
-#define __HIREDIS_ASYNC_H
+#ifndef HIREDIS_ASYNC_H
+#define HIREDIS_ASYNC_H
 #include "hiredis.h"
 
 #ifdef __cplusplus
