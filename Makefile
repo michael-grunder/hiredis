@@ -252,7 +252,8 @@ $(SSL_PKGCONFNAME): hiredis.h
 	@echo Libs: -L\$${libdir} -lhiredis_ssl >> $@
 	@echo Libs.private: -lssl -lcrypto >> $@
 
-install-ssh:
+install-ssl: $(SSL_DYLIBNAME) $(SSL_STLIBNAME) $(SSL_PKGCONFNAME)
+	mkdir -p $(INSTALL_INCLUDE_PATH) $(INSTALL_LIBRARY_PATH)
 	$(INSTALL) hiredis_ssl.h $(INSTALL_INCLUDE_PATH)
 	$(INSTALL) $(SSL_DYLIBNAME) $(INSTALL_LIBRARY_PATH)/$(SSL_DYLIB_MINOR_NAME)
 	cd $(INSTALL_LIBRARY_PATH) && ln -sf $(SSL_DYLIB_MINOR_NAME) $(SSL_DYLIBNAME)
@@ -271,7 +272,7 @@ endif
 	$(INSTALL) $(STLIBNAME) $(INSTALL_LIBRARY_PATH)
 	mkdir -p $(INSTALL_PKGCONF_PATH)
 	$(INSTALL) $(PKGCONFNAME) $(INSTALL_PKGCONF_PATH)
-	if [ -f "$(SSL_DYLIBNAME)" ]; then $(MAKE) install-ssh; fi
+	if [ -f "$(SSL_DYLIBNAME)" ]; then $(MAKE) install-ssl; fi
 
 32bit:
 	@echo ""
