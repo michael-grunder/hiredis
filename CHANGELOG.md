@@ -157,7 +157,7 @@ _A big thanks to everyone who helped with this release.  The following list incl
 
 ## [1.0.0-rc1](https://github.com/redis/hiredis/tree/v1.0.0-rc1) - (2020-07-29)
 
-_Note:  There were no changes to code between v1.0.0-rc1 and v1.0.0 so see v1.0.0 for changelog_
+_Note:  There were no changes to code between v1.0.0-rc1 and v1.0.0 so see [v1.0.0](https://github.com/redis/hiredis/blob/v1.0.0/CHANGELOG.md#100---2020-08-03) for changelog_
 
 ### 0.14.1 (2020-03-13)
 
