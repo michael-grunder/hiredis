@@ -61,7 +61,7 @@ void hiredisResetAllocators(void) {
     };
 }
 
-#ifdef _WIN32
+#if defined(_WIN32) || (defined(__MACH__) && defined(__aarch64__))
 
 void *hi_malloc(size_t size) {
     return hiredisAllocFns.mallocFn(size);

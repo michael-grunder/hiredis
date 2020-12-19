@@ -49,7 +49,15 @@ typedef struct hiredisAllocFuncs {
 hiredisAllocFuncs hiredisSetAllocators(hiredisAllocFuncs *ha);
 void hiredisResetAllocators(void);
 
-#ifndef _WIN32
+#if defined(_WIN32) || (defined(__MACH__) && defined(__aarch64__))
+
+void *hi_malloc(size_t size);
+void *hi_calloc(size_t nmemb, size_t size);
+void *hi_realloc(void *ptr, size_t size);
+char *hi_strdup(const char *str);
+void hi_free(void *ptr);
+
+#else
 
 /* Hiredis' configured allocator function pointer struct */
 extern hiredisAllocFuncs hiredisAllocFns;
@@ -73,14 +81,6 @@ static inline char *hi_strdup(const char *str) {
 static inline void hi_free(void *ptr) {
     hiredisAllocFns.freeFn(ptr);
 }
-
-#else
-
-void *hi_malloc(size_t size);
-void *hi_calloc(size_t nmemb, size_t size);
-void *hi_realloc(void *ptr, size_t size);
-char *hi_strdup(const char *str);
-void hi_free(void *ptr);
 
 #endif
 
