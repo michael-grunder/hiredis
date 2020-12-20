@@ -61,8 +61,6 @@ void hiredisResetAllocators(void) {
     };
 }
 
-#if defined(_WIN32) || defined(__MACH__)
-
 void *hi_malloc(size_t size) {
     return hiredisAllocFns.mallocFn(size);
 }
@@ -82,5 +80,3 @@ char *hi_strdup(const char *str) {
 void hi_free(void *ptr) {
     hiredisAllocFns.freeFn(ptr);
 }
-
-#endif
