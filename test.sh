@@ -8,7 +8,7 @@ SKIPS_AS_FAILS=${SKIPS_AS_FAILS-:0}
 ENABLE_DEBUG_CMD=
 SSL_TEST_ARGS=
 SKIPS_ARG=${SKIPS_ARG:-}
-
+REDIS_DOCKER=
 
 # We need to enable the DEBUG command for redis-server >= 7.0.0
 REDIS_MAJOR_VERSION="$(redis-server --version|awk -F'[^0-9]+' '{ print $2 }')"
