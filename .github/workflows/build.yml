@@ -152,7 +152,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          brew install openssl redis
+          brew install openssl redis@6.2
 
       - name: Build hiredis
         run: USE_SSL=1 make
