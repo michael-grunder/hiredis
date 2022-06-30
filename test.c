@@ -2079,7 +2079,6 @@ static void test_async(struct config config) {
         test_cond(astest.connect_status == REDIS_ERR);
         config = defaultconfig;
     }
-
     /* Test a ping/pong after connection */
     test("Async PING/PONG: ");
     c = do_aconnect(config, ASTEST_PINGPONG);
@@ -2193,7 +2192,6 @@ int main(int argc, char **argv) {
     test_invalid_timeout_errors(cfg);
     test_append_formatted_commands(cfg);
     if (throughput) test_throughput(cfg);
-    test_async(cfg);
 
     printf("\nTesting against Unix socket connection (%s): ", cfg.unix_sock.path);
     if (test_unix_socket) {
