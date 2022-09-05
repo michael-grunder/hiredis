@@ -44,6 +44,12 @@
 #include "async.h"
 #include "win32.h"
 
+#ifdef _MSC_VER
+#define REDIS_SIZET_FMT "Iu"
+#else
+#define REDIS_SIZET_FMT "zu"
+#endif
+
 extern int redisContextUpdateConnectTimeout(redisContext *c, const struct timeval *timeout);
 extern int redisContextUpdateCommandTimeout(redisContext *c, const struct timeval *timeout);
 
@@ -515,7 +521,7 @@ int redisvFormatCommand(char **target, const char *format, va_list ap) {
 
     pos = sprintf(cmd,"*%d\r\n",argc);
     for (j = 0; j < argc; j++) {
-        pos += sprintf(cmd+pos,"$%zu\r\n",sdslen(curargv[j]));
+        pos += sprintf(cmd+pos,"$%" REDIS_SIZET_FMT "\r\n",sdslen(curargv[j]));
         memcpy(cmd+pos,curargv[j],sdslen(curargv[j]));
         pos += sdslen(curargv[j]);
         sdsfree(curargv[j]);
@@ -664,7 +670,7 @@ long long redisFormatCommandArgv(char **target, int argc, const char **argv, con
     pos = sprintf(cmd,"*%d\r\n",argc);
     for (j = 0; j < argc; j++) {
         len = argvlen ? argvlen[j] : strlen(argv[j]);
-        pos += sprintf(cmd+pos,"$%zu\r\n",len);
+        pos += sprintf(cmd+pos,"$%" REDIS_SIZET_FMT "\r\n",len);
         memcpy(cmd+pos,argv[j],len);
         pos += len;
         cmd[pos++] = '\r';
